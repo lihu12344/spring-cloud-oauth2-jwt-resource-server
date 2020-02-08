@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: resource-server
+server:
+  port: 8082
+
+security:
+  oauth2:
+    client:
+      client-id: user
+      client-secret: 123456
+      user-authorization-uri: http://localhost:8081/oauth/authorize
+      access-token-uri: http://localhost:8081/oauth/token
+    resource:
+      jwt:
+        key-uri: http://localhost:8081/oauth/token_key
+        key-value: sign123456
